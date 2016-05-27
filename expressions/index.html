@@ -1,0 +1,24 @@
+<!Doctype html>
+<html>
+  <head>
+       <title>Page</title>
+  </head>
+<body>
+<script type="text/javascript" src="script.js"></script>
+<script type="text/javascript" src="protractor.js"></script>
+<script type="text/javascript" src="angular.min.js"></script>
+<div ng-controller="ExampleController" class="expression">
+    <p>Expression:</p>
+    <input type='text' ng-model="expr" size="80"/>
+    <button ng-click="addExp(expr)">Evalueaza</button>
+    <ul>
+        <li ng-repeat="expr in exprs track by $index">
+            [ <a href="" ng-click="removeExp($index)"]> X </a> ]
+            <code>{{expr}}</code> => <span ng-bind="$parent.$eval(expr)"></span>
+        </li>
+    </ul>
+</div>
+</body>
+
+
+</html>
