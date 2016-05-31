@@ -6,3 +6,15 @@
 {
  border-color:#78FA89;
 }
+.form-control
+{
+     width: 16%;
+     margin-left:20px;
+}
+.ng-scope {
+  margin-left: 20px;
+  margin-right: 20px;
+}
+.list-group {
+  margin-top: 10px;
+}

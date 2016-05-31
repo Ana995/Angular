@@ -12,8 +12,14 @@
     <table>
         <tr ng-repeat="x in myData">
             <td>{{$index+1}}</td>
-            <td>{{ x.Name}}</td>
-            <td>{{x.Country }}</td>
+            <td ng-if="$odd" style="background-color:#f1f1f1">
+                {{ x.Name }}</td>
+            <td ng-if="$even">
+                {{ x.Name }}</td>
+            <td ng-if="$odd" style="background-color:#f1f1f1">
+                {{ x.Country }}</td>
+            <td ng-if="$even">
+                {{ x.Country }}</td>
         </tr>
     </table>
 

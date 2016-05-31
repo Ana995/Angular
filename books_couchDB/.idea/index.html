@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <title>Title</title>
+</head>
+<body>
+  <div>
+      <form ng-controller="bookCtrl">
+          Book Name:-<input type="text" ng-model="bname" />
+          Book Author:-<input type="text" ng-model="bauthor" />
+          Book Price:-<input type="text" ng-model="bprice" />
+          Book Language:-<input type="text" ng-model="blanguage" />
+          <input type="button" value="Submit" ng-click="insertData()" />
+      </form>
+  </div>
+</body>
+<script type="text/javascript" src="angular.min.js"></script>
+<script type="text/javascript" src="app.js"></script>
+</html>
