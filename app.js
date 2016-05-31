@@ -1,5 +1,5 @@
 (function(){
-  var app=angular.module('store',['store-products']); //store depinde de store-products
+  var app=angular.module('store',['store-products' ]); //store depinde de store-products
   app.controller('StoreController',function(){ //apelul la 'StoreController'
      this.products=gems; //product=proprietate a controllerului
       this.search={};
@@ -138,44 +138,55 @@
  });*/
  app.controller('ReviewController',function(){
    this.review={};
-   this.addReview=function(product){ //product e un array
+   this.addReview =function(product){ //product e un array
      product.reviews.push(this.review);
      this.review={};
    };
  });
-    
-    $scope.addToCart = function (product) {
-        var found = false;
-        $scope.cart.forEach(function (item) {
-            if (item.id === product.id) {
-                item.quantity++;
-                found = true;
-            }
-        });
-        if (!found) {
-            $scope.cart.push(angular.extend({quantity: 1}, product));
+    app.controller('shoppingCart', function ($scope) {
+        $scope.cart = [];
+        $scope.products = [];
+
+        $scope.addProduct =function() {
+
+            alert("hello");
+            $scope.products.push({name:$scope.name, price:$scope.price});
+            $scope.nameProduct = "";
+            $scope.priceProduct = "";
         }
-    };
 
-    $scope.getCartPrice = function () {
-        var total = 0;
-        $scope.cart.forEach(function (product) {
-            total += product.price * product.quantity;
-        });
-        return total;
-    };
-
-    $scope.checkout = function () {
-        $modal.open({
-            templateUrl: 'checkout.html',
-            controller: 'CheckoutCtrl',
-            resolve: {
-                totalAmount: $scope.getCartPrice
+        $scope.addToCart = function (product) {
+            var found = false;
+            $scope.cart.forEach(function (item) {
+                if (item.id === product.id) {
+                    item.quantity++;
+                    found = true;
+                }
+            });
+            if (!found) {
+                $scope.cart.push(angular.extend({quantity: 1}, product));
             }
-        });
-    }
+        };
 
-    .controller('CheckoutCtrl', function ($scope, totalAmount) {
+        $scope.getCartPrice = function () {
+            var total = 0;
+            $scope.cart.forEach(function (product) {
+                total += product.price * product.quantity;
+            });
+            return total;
+        };
+        /*$scope.checkout = function () {
+            $modal.open({
+                templateUrl: 'checkout.html',
+                controller: 'CheckoutCtrl',
+                resolve: {
+                    totalAmount: $scope.getCartPrice
+                }
+            });
+        };*/
+        
+    });
+    app.controller('CheckoutCtrl', function ($scope, totalAmount) {
         $scope.totalAmount = totalAmount;
 
         $scope.onSubmit = function () {
@@ -197,5 +208,6 @@
             $scope.stripeToken = null;
         };
     });
-    })();
+
+})();
 
