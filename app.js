@@ -1,5 +1,6 @@
 (function(){
-  var app=angular.module('store',['store-products' ]); //store depinde de store-products
+  var app=angular.module('store',['store-products' ,'angularModalService']); //store depinde de store-products
+    this.suma=[];
   app.controller('StoreController',function(){ //apelul la 'StoreController'
      this.products=gems; //product=proprietate a controllerului
       this.search={};
@@ -136,6 +137,14 @@
            };
 
  });*/
+  /*app.controller('ProductCtrl',[ '$http',function($http){ //remoteAPI
+        var store=this;
+      store.product=[];
+         $http.get("/product","server.js");
+       $http.get('/product.json').success(function(data){
+              store.products=data;
+           });
+  }]);*/
  app.controller('ReviewController',function(){
    this.review={};
    this.addReview =function(product){ //product e un array
@@ -146,15 +155,14 @@
     app.controller('shoppingCart', function ($scope) {
         $scope.cart = [];
         $scope.products = [];
+        /*$scope.addProduct =function() {
 
-        $scope.addProduct =function() {
-
-            alert("hello");
+            //alert("hello");
             $scope.products.push({name:$scope.name, price:$scope.price});
             $scope.nameProduct = "";
             $scope.priceProduct = "";
-        }
-
+        }*/
+         $scope.suma=[];
         $scope.addToCart = function (product) {
             var found = false;
             $scope.cart.forEach(function (item) {
@@ -171,12 +179,13 @@
         $scope.getCartPrice = function () {
             var total = 0;
             $scope.cart.forEach(function (product) {
+                total=0;
                 total += product.price * product.quantity;
             });
             return total;
         };
         /*$scope.checkout = function () {
-            $modal.open({
+            $scope.open({
                 templateUrl: 'checkout.html',
                 controller: 'CheckoutCtrl',
                 resolve: {
@@ -186,7 +195,7 @@
         };*/
         
     });
-    app.controller('CheckoutCtrl', function ($scope, totalAmount) {
+    app.controller('CheckoutCtrl', function ($scope, totalAmount ) {
         $scope.totalAmount = totalAmount;
 
         $scope.onSubmit = function () {

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="css/style.css"/>
+</head>
+<body>
+
+<div class="note-content">
+    <div class="note-header">
+        <h1 titles="Notes">Notes</h1>
+    </div>
+</div>
+<div class="user-wrapper">
+         <a class="card-notes" ng-repear="user in users">
+             <div class="card" title="{{user.title}}">
+                 <h2 class="h3">{{user.title}}</h2>
+                 <p>{{user.description}}</p>
+             </div>
+         </a>
+     </div>
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+<script src="../../../js/app.js"></script>
+<!--Controllers-->
+<script src="../../../controllers/controllers.js"></script>
+<script src="../../../controllers/notes-edit-controller.js"></script>
+<script src="../../../controllers/notes-create-controller.js"></script>
+<script src="../../../controllers/notes-index-controller.js"></script>
+<script src="../../../controllers/notes-show-controller.js"></script>
+
+</html>

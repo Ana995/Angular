@@ -8,6 +8,9 @@ var db_name = "books";
 app.use(express.static('./'));
 app.use
 
+app.get("/product",function( req,res){
+   var products="getproduct.js"; 
+});
 app.get("/", function (req, res) {
      res.sendFile(__dirname + "/" + "index.html");
      req.insert_doc= function(doc, tried) {
