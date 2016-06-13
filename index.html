@@ -6,11 +6,22 @@
        <link rel="stylesheet" type="text/css" href="css/style.css">
        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
    </head>
-   <body ng-controller="StoreController as store" ng-app="app">
+   <body ng-controller="StoreController as store">
    <header>
        <h1>Online Store</h1>
    </header>
 
+   <section ng-app="myApp">
+       <ul class="nav navbar-nav navbar-right">
+           <li><a href="#">Home</a></li>
+           <li><a href="#/second">Product</a></li>
+           <li><a href="#">Contact</a></li>
+
+       </ul>
+       <div class="container">
+           <div ng-view></div>
+       </div>
+   </section>
    <div class="row">
       <div class="col-md-12">
           <form class="form-inline well well-sm">
@@ -20,13 +31,14 @@
         </div>
       </div>
    </div>
-         </form>
+     </form>
    <section ng-controller = "shoppingCart" >
-       <div ng-repeat="product in store.products | filter:search"   ng-click = "addToCart(product)"> <!-- filter:search cauta dupa toate artibutele lui search specificate in input-->
+       <a href="#product">See products!</a>
+       <div ng-repeat="product in store.products | filter:search"  ng-click = "addToCart(product)"> <!-- filter:search cauta dupa toate artibutele lui search specificate in input-->
            <h1>{{product.name}}</h1>
            <h2>{{product.price | currency}}</h2>
            <p>{{product.description}}</p>
-           <input type = "submit" value = "Add" ng-show="product.canPurchase"/>
+           <input type = "submit" value = "Add" ng-show="product.canPurchase"  />
            <div ng-show="cart.length" class="shopping-cart" >
                <h2> items in cart, {{getCartPrice()}}$</h2>
 			<span class="cart-item th radius" ng-repeat="product in cart">
@@ -38,23 +50,32 @@
            </div>
        </div>
        <div>
-           <ul class="list-group">
+           <ul class="list-group" id="product">
                <li class="list-group-item" ng-repeat="product in store.products">
                    <!-- <h3 ng-include="'product-title.html'">
                    </h3>-->
                    <h3>
-                       <product-title></product-title>   <!--custom directive-->
+                       <product-title>
+                            *list products might not be valid
+                       </product-title>   <!--custom directive-->
                    </h3>
-                   <product-panels></product-panels>
+                   <product-panels>
+
+                       *list products might not be valid
+                   </product-panels>
                </li>
            </ul>
        </div>
-
    </section>
-  </body>
 
+  </body>
    <script type="text/javascript" src="angular.min.js"></script>
-   <script type="text/javascript" src="products.js"></script>
+   <script type="text/javascript" src="angular-route.min.js"></script>
+   <script type="text/javascript" src="angular-resource.min.js"></script>
+   <script type="text/javascript" src="app_route.js"></script>
    <script type="text/javascript" src="app.js"></script>
+   <script type="text/javascript" src="products.js"></script>
    <script type="text/javascript" src="angular-modal-service.js"></script>
+
+
 </html>

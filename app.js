@@ -155,13 +155,6 @@
     app.controller('shoppingCart', function ($scope) {
         $scope.cart = [];
         $scope.products = [];
-        /*$scope.addProduct =function() {
-
-            //alert("hello");
-            $scope.products.push({name:$scope.name, price:$scope.price});
-            $scope.nameProduct = "";
-            $scope.priceProduct = "";
-        }*/
          $scope.suma=[];
         $scope.addToCart = function (product) {
             var found = false;
@@ -179,7 +172,6 @@
         $scope.getCartPrice = function () {
             var total = 0;
             $scope.cart.forEach(function (product) {
-                total=0;
                 total += product.price * product.quantity;
             });
             return total;
@@ -217,6 +209,22 @@
             $scope.stripeToken = null;
         };
     });
+    window.addEventListener('hashchange',function(){
+        if(window.location.hash ==='#product')
+        {
+            console.log('Page 1');
+        }
+        if(window.location.hash ==='#/product/2')
+        {
+            console.log('Page 2');
+        }
+        if(window.location.hash ==='#/product/3')
+        {
+            console.log('Page 3');
+        }
+    });
 
 })();
+
+
 

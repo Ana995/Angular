@@ -1,0 +1,49 @@
+<!Doctype html>
+<html>
+  <head>
+      <link href="css/bootstrap.css" rel="stylesheet">
+      <style type="text/css">
+          body {
+              padding-top: 60px;
+              padding-bottom: 40px;
+          }
+          .sidebar-nav {
+              padding: 9px 0;
+          }
+      </style>
+
+      <link href="css/bootstrap-responsive.css" rel="stylesheet">
+  </head>
+<body>
+<div>
+    <form id="newquote" >
+        <fieldset>
+            <legend>The quote</legend>
+            <label for="author">Author's Name</label>
+            <input id="author" name="author" type="text" placeholder="First and last name"
+                   required="required" autofocus="autofocus">
+            <label for="text">Text of the quotation</label>
+            <input id="text" name="text" type="textarea" placeholder="Text of the quote here"
+                   required="required">
+        </fieldset>
+        <fieldset>
+            <legend>The work</legend>
+            <label for="title">Title of the work</label>
+            <input id="title" name="title" type="text" required="required">
+            <label for="link">Link to the work</label>
+            <input id="link" name="link" type="text" required="required">
+            <label for="year">Year of the work</label>
+            <input id="year" name="year" type="text" required="required">
+        </fieldset>
+        <input id="donewquote" type="submit" value="Add quote" />
+    </form>
+</div>
+</body>
+  <script src="app.js"></script>
+  <script src="jquery.js"></script>
+ <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+
+</html>
+
+
+
