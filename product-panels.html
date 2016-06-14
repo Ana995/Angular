@@ -1,12 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="css/style.css">
-    <title>Panels</title>
-</head>
-<body>
 <section>
     <ul class="nav nav-pills">
         <li ng-class="{active:panels.isActive(1)}"><a href ng-click=panels.selectTab(1)> Description </a></li>
@@ -29,7 +20,7 @@
             {{review.body}}
             <cite>by: {{review.author}}</cite>
         </blockquote>
-        <form name="reviewForm" ng-controller="ReviewController as reviewCtrl" ng-submit="reviewForm.$valid && reviewCtrl.addReview(product)" novalidate>
+        <form name="reviewForm"  ng-submit="reviewForm.$valid && reviewCtrl.addReview(product)" novalidate>
             <blockquote>
                 <b>Stars: {{ reviewCtrl.review.star}}</b>
                 {{reviewCtrl.review.body}}
@@ -51,9 +42,3 @@
     </li>
     </ul>
 </section>
-<small><ng-transclude></ng-transclude></small>
-</body>
-<script type="text/javascript" src="angular.min.js"></script>
-<script type="text/javascript" src="app.js"></script>
-<script type="text/javascript" src="products.js"></script>
-</html>

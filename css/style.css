@@ -4,17 +4,34 @@
 }
 .ng-valid.ng-dirty
 {
- border-color:#78FA89;
+ border-color:#78FA99;
 }
 .form-control
 {
-     width: 16%;
-     margin-left:20px;
+    width: 16%;
+    margin-left: 20px;
 }
-.ng-scope {
+.ng-scope
+{
   margin-left: 20px;
   margin-right: 20px;
 }
-.list-group {
+.list-group
+{
   margin-top: 10px;
+}
+.nav.navbar-nav.navbar-right
+{
+    float: left;
+    width: 100%;
+}
+.ng-pristine.ng-untouched.ng-empty.ng-invalid.ng-invalid-required
+{
+    display: table;
+    margin-bottom: 20px;
+}
+.form-control
+{
+    margin-left: 4px;
+    width: 16%;
 }
