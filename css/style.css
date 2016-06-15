@@ -1,3 +1,7 @@
+body
+{
+    font-family: 'Roboto Condensed', sans-serif;
+}
 .ng-invalid.ng-dirty
 {
  border-color:#FA787E;
@@ -30,8 +34,38 @@
     display: table;
     margin-bottom: 20px;
 }
+.nav.navbar-nav.navbar-right a {
+    font-size: 16px;
+}
+.nav.navbar-nav.navbar-right {
+    margin-right: 0px;
+}
 .form-control
 {
     margin-left: 4px;
     width: 16%;
+}
+.logo {
+    width: 74px;
+    display: table;
+    margin-top: 0 auto;
+    position: relative;
+    left: 176px;
+    top: -58px;
+}
+header {
+    height: 61px;
+    margin: 0 auto;
+    width: 300px;
+}
+.ng-binding > input {
+    float: right;
+    left: 50px;
+    position: relative;
+    top: 42px;
+    font-size:18px;
+}
+footer {
+    width: auto;
+    text-align:  center;
 }

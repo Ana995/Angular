@@ -8,15 +8,18 @@
        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
        <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+       <link href='https://fonts.googleapis.com/css?family=Roboto+Condensed' rel='stylesheet' type='text/css'>
    </head>
    <body>
    <header>
-       <h1>Online Store</h1>
+       <h1 class="title">Online Store</h1>
+       <img  class="logo" src="img/logo.png">
    </header>
+   <hr />
    <section>
        <ul class="nav navbar-nav navbar-right">
            <li><a href="#/first">Home</a></li>
-           <li><a href="#/second">Product</a></li>
+           <li><a href="#/second">Products</a></li>
            <li><a href="#/contact">Contact</a></li>
 
        </ul>
@@ -34,28 +37,11 @@
    <div class="container">
        <div ng-view></div>
    </div>
-   <section ng-controller = "shoppingCart" >
-       <div ng-repeat="product in store.products | filter:search"  > <!-- filter:search cauta dupa toate artibutele lui search specificate in input-->
-           <h1>{{product.name}}</h1>
-           <h2>{{product.price | currency}}</h2>
-           <p>{{product.description}}</p>
-           <input type = "submit" value = "Add" ng-show="product.canPurchase"  ng-click = "addToCart(product)" />
-           <div ng-show="cart.length" class="shopping-cart" >
-               <h2> items in cart, {{getCartPrice()}}$</h2>
-			<span class="cart-item th radius" ng-repeat="product in cart">
-				<span class="badge" ng-show="product.quantity">
-					x{{product.quantity}}
-				</span>
-			</span>
-               <div ng-controller="CheckoutCtrl">
-                   <button type="submit"  id="check">CheckOut</button>
-               </div>
-           </div>
-       </div>
-     </section>
+
+   <section ng-controller = "shoppingCart">
        <div>
            <ul class="list-group" id="products">
-               <li class="list-group-item" ng-repeat="product in store.products">
+               <li class="list-group-item" ng-repeat="product in store.products | filter:search">
                    <h3>
                        <product-title>
                             *list products might not be valid
@@ -65,7 +51,12 @@
                </li>
            </ul>
        </div>
-
+      </section>
+    <footer>
+        <hr/>
+         <p>Contact us</p>
+        <hr/>
+    </footer>
   </body>
    <script type="text/javascript" src="js/angular.min.js"></script>
    <script type="text/javascript" src="js/angular-route.min.js"></script>
