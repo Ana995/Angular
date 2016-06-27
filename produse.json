@@ -1,0 +1,121 @@
+{
+  "products":[
+
+    {
+      "name": "Bike",
+      "price": 3,
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
+      "images": [
+        {
+          "full": "img/poza.jpeg"
+        }
+      ],
+      "reviews": [
+        {
+          "star": 5,
+          "body": "Cuteee",
+          "author": "joe@yahoo.com"
+        },
+        {
+          "star": 4,
+          "body": "Super!",
+          "author": "tom@gmail.com",
+          "canPurchase": false
+        }
+      ]
+    },
+    {
+      "name": "Barbie doll",
+      "price": 6.45,
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
+      "canPurchase": true,
+      "images": [
+        {
+          "full": "img/barbie.jpeg"
+        }
+      ],
+      "reviews": [
+        {
+          "stars": 5,
+          "body": "Cuteee",
+          "author": "joe@yahoo.com"
+        },
+        {
+          "stars": 3,
+          "body": "It's ok",
+          "author": "tom@gmail.com"
+        }
+      ]
+    },
+    {
+      "name": "Car",
+      "price": 500,
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
+      "canPurchase": true,
+      "images": [
+        {
+          "full": "img/car.jpeg"
+        }
+      ],
+      "reviews": [
+        {
+          "stars": 5,
+          "body": "Cuteee",
+          "author": "joe@yahoo.com"
+        },
+        {
+          "stars": 3,
+          "body": "It's ok",
+          "author": "tom@gmail.com"
+        }
+      ]
+    },
+    {
+      "name": "Teddy Bear",
+      "price": 10.5,
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
+      "canPurchase": true,
+      "images": [
+        {
+          "full": "img/teddy.jpeg"
+        }
+      ],
+      "reviews": [
+        {
+          "stars": 5,
+          "body": "Cuteee",
+          "author": "joe@yahoo.com"
+        },
+        {
+          "stars": 3,
+          "body": "It's ok",
+          "author": "tom@gmail.com"
+        }
+      ]
+    },
+    {
+      "name": "Head Phones",
+      "price": 6.45,
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
+      "canPurchase": true,
+      "images": [
+        {
+          "full": "img/headphone.jpeg"
+        }
+      ],
+      "reviews": [
+        {
+          "stars": 5,
+          "body": "Cuteee",
+          "author": "joe@yahoo.com"
+        },
+        {
+          "stars": 3,
+          "body": "It's ok",
+          "author": "tom@gmail.com"
+        }
+      ]
+    }
+
+  ]
+}
