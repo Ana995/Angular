@@ -1,71 +1,62 @@
-body
-{
+body{
     font-family: 'Roboto Condensed', sans-serif;
 }
-.ng-invalid.ng-dirty
-{
+.ng-invalid.ng-dirty{
  border-color:#FA787E;
 }
-.ng-valid.ng-dirty
-{
+.ng-valid.ng-dirty {
  border-color:#78FA99;
 }
-.form-control
-{
+.form-control{
     width: 16%;
     margin-left: 20px;
 }
-.ng-scope
-{
+.ng-scope{
   margin-left: 20px;
   margin-right: 20px;
 }
-.list-group
-{
+.list-group{
   margin-top: 10px;
 }
-.nav.navbar-nav.navbar-right
-{
+.nav.navbar-nav.navbar-right{
     float: left;
     width: 100%;
 }
-.ng-pristine.ng-untouched.ng-empty.ng-invalid.ng-invalid-required
-{
+.ng-pristine.ng-untouched.ng-empty.ng-invalid.ng-invalid-required{
     display: table;
     margin-bottom: 20px;
 }
-.nav.navbar-nav.navbar-right a {
+.nav.navbar-nav.navbar-right a{
     font-size: 16px;
 }
-.nav.navbar-nav.navbar-right {
+.nav.navbar-nav.navbar-right{
     margin-right: 0px;
 }
-.form-control
-{
+.form-control{
     margin-left: 4px;
     width: 16%;
 }
-.logo {
+.logo{
     width: 74px;
     display: table;
-    margin-top: 0 auto;
+    margin-top: 0;
     position: relative;
-    left: 176px;
+    left: 205px;
     top: -58px;
 }
-header {
+header{
     height: 61px;
     margin: 0 auto;
     width: 300px;
 }
-.ng-binding > input {
+.ng-binding > input{
     float: right;
     left: 50px;
     position: relative;
     top: 42px;
     font-size:18px;
 }
-footer {
+footer{
     width: auto;
     text-align:  center;
 }

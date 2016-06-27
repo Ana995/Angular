@@ -1,33 +1,40 @@
 <!Doctype html>
-<html ng-app="store" ng-controller="StoreController as store">
+<html ng-app="store">
    <head>
        <meta name="viewport" content="width=device-width, initial-scale=1">
        <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
        <link rel="stylesheet" type="text/css" href="css/style.css">
-       <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-       <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
-       <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
        <link href='https://fonts.googleapis.com/css?family=Roboto+Condensed' rel='stylesheet' type='text/css'>
    </head>
-   <body>
+   <body ng-controller="StoreController as store">
    <header>
        <h1 class="title">Online Store</h1>
        <img  class="logo" src="img/logo.png">
+       <script>
+           function newwindow() {
+               var showme = document.getElementById("products");
+               showme.style.visibility = "hidden";
+           }
+           function show() {
+               var showme = document.getElementById("products");
+               showme.style.visibility = "visible";
+           }
+       </script>
    </header>
    <hr />
    <section>
        <ul class="nav navbar-nav navbar-right">
-           <li><a href="#/first">Home</a></li>
-           <li><a href="#/second">Products</a></li>
-           <li><a href="#/contact">Contact</a></li>
+           <li><a href="#/first" onclick="newwindow()">Home</a></li>
+           <li><a href="#/second" onclick="show()">Products</a></li>
+           <li><a href="#/contact" onclick="newwindow()">Contact</a></li>
 
        </ul>
    </section>
    <div class="row">
        <div class="col-md-12">
           <form class="form-inline well well-sm">
-               <span class="glyphicon glyphicon-search "></span>
+             <!--  <span class="glyphicon glyphicon-search "></span>-->
               <div class="form-group">
                   <input type="text" class="form-control" id="name" placeholder="Search product..." ng-model="search.$"> <!-- $ permite sa caut dupa orice atribut-->
               </div>
@@ -38,9 +45,9 @@
        <div ng-view></div>
    </div>
 
-   <section ng-controller = "shoppingCart">
+   <section>
        <div>
-           <ul class="list-group" id="products">
+           <ul class="list-group" id="products" ng-controller="shoppingCart" >
                <li class="list-group-item" ng-repeat="product in store.products | filter:search">
                    <h3>
                        <product-title>
@@ -48,9 +55,20 @@
                        </product-title>   <!--custom directive-->
                    </h3>
                   <product-panels></product-panels>
+                   <div ng-show="cart.length" class="shopping-cart">
+                       <h2>{{cart.length}} items in cart, {{getCartPrice()}}$</h2>
+
+		            	<span class="cart-item th radius" ng-repeat="product in cart">
+			            	<img ng-src="{{product.image}}" title="{{product.title}}"/>
+			            	<span class="badge" ng-show="product.quantity > 1">
+				        	x{{product.quantity}}
+				            </span>
+                        </span>
+                       <button ng-click="checkout();">Checkout</button>
+                   </div>
                </li>
            </ul>
-       </div>
+         </div>
       </section>
     <footer>
         <hr/>
@@ -58,11 +76,20 @@
         <hr/>
     </footer>
   </body>
-   <script type="text/javascript" src="js/angular.min.js"></script>
-   <script type="text/javascript" src="js/angular-route.min.js"></script>
-   <script type="text/javascript" src="js/angular-resource.min.js"></script>
-   <script type="text/javascript" src="js/app_route.js"></script>
+   <script type="text/javascript" src="js/lib/angular.js"></script>
+   <script type="text/javascript" src="js/lib/angular-route.min.js"></script>
+   <script type="text/javascript" src="js/lib/angular-resource.min.js"></script>
+   <script type="text/javascript" src="js/lib/angular-modal-service.js"></script>
    <script type="text/javascript" src="js/app.js"></script>
-   <script type="text/javascript" src="js/products.js"></script>
-   <script type="text/javascript" src="js/angular-modal-service.js"></script>
+   <script type="text/javascript" src="js/controllers/storeController.js"></script>
+   <script type="text/javascript" src="js/controllers/shoppingCart.js"></script>
+   <script type="text/javascript" src="js/controllers/checkOut.js"></script>
+   <script type="text/javascript" src="js/controllers/review.js"></script>
+   <script type="text/javascript" src="js/directives/products.js"></script>
+   <script src="js/lib/mm-foundation-tpls.js"></script>
+   <script src="js/lib/spin.min.js"></script>
+   <script src="js/lib/angular-spinner.js"></script>
+   <script src="js/lib/angular-animate.min.js"></script>
+   <script src="js/lib/angular-payments.js"></script>
+
 </html>

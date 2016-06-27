@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../css/style.css">
+    <title>Title</title>
+</head>
+<body >
+{{product.name}}
+<em class="pull-right">{{product.price | currency}}</em>
+<img ng-src="{{product.images[0].full}}"/>
+<input value="Add to cart" ng-click="addToCart(product);" type="submit"/>
+<!--<small ng-transclude></small>-->
+</body>
+<script type="text/javascript" src="angular.min.js"></script>
+<script type="text/javascript" src="app.js"></script>
+<script type="text/javascript" src="products.js"></script>
+</html>
